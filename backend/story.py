@@ -1,23 +1,56 @@
 import openai
+from threading import Thread
 import constants
+
+PROMPT_START = "Write a short kids story about "
+IMG_PROMPT_START = 'childish cartoon picture of '
 
 openai.api_key = constants.OAI_KEY
 
-# response = openai.Image.create(
-#   prompt="a stickman playing the banjo in a simple cartoon style",
-#   n=1,
-#   size="1024x1024"
-# )
-# image_url = response['data'][0]['url']
-# print(response)
-# print(image_url)
+def generate_pictures(index, dict, pic_prompt):
+    pic_prompt = IMG_PROMPT_START + pic_prompt
 
-# response = openai.Completion.create(
-#   model= "text-davinci-003",
-#   prompt = "write me a short kids story about 3 friends creating a project for a hackathon",
-#   temperature = 0,
-#   max_tokens = 3000,
-#   stream = False
-# )
-x = "\n\nOnce upon a time, there were three friends named Alex, Sarah, and John. They were all very passionate about technology and wanted to make a difference in the world.\n\nOne day, they heard about a hackathon that was coming up and decided to enter. They had a great idea for a project that would help people in their community, but they weren't sure how to make it happen.\n\nSo, they got to work. They spent hours researching, brainstorming, and coding. They worked together to create a project that would help people in their community.\n\nFinally, the day of the hackathon arrived. Alex, Sarah, and John presented their project to the judges and were thrilled when they won first place!\n\nThe three friends were so proud of their accomplishment and were excited to see how their project would help people in their community. They had worked hard and it had paid off.\n\nThe end."
-print(x)
+    response = openai.Image.create(
+    prompt=pic_prompt, 
+    n=1,
+    size="512x512"
+    )
+    image_url = response['data'][0]['url']
+    
+    dict[index]["picture"] = image_url
+
+def generate_story(theme, characters):
+    #
+    # Get Characters for prompt
+    #
+    story_characters = ", ".join(characters[:len(characters) - 1])
+    story_characters += ", and " + characters[-1]
+    
+    #
+    # Construct Prompt
+    #
+    user_prompt = PROMPT_START + story_characters + " and " + theme
+    story_response = openai.Completion.create(
+        model = "text-davinci-003",
+        prompt = user_prompt,
+        temperature = 1,
+        max_tokens = 4096 - len(user_prompt), # max length possible
+        stream = False
+    )
+
+    story = story_response['choices'][0]['text']
+    story = story.split('\n\n')[1:]
+    
+    threads = []
+    story_book = {}
+    for index in range(len(story)):
+        story_book[index] = {"text": story[index]}
+
+        thread = Thread(target=generate_pictures, args=(index, story_book, story[index]))
+        thread.start()
+        threads.append(thread)
+
+    for thread in threads:
+        thread.join()
+
+    return (len(story), story_book)
