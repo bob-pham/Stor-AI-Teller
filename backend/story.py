@@ -24,7 +24,7 @@ def generate_story(theme, characters):
     # Get Characters for prompt
     #
     story_characters = ", ".join(characters[:len(characters) - 1])
-    story_characters += ", and " + characters[-1]
+    story_characters += ", themed on " + characters[-1]
     
     #
     # Construct Prompt
