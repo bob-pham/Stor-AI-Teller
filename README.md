@@ -60,3 +60,6 @@ python server.py
 <img src="./frontend/src/assets/loading_page.png">
 <img src="./frontend/src/assets/page1.png">
 <img src="./frontend/src/assets/pagelast.png">
+
+### Futher Reading
+https://bobpham.vercel.app/storai-teller
