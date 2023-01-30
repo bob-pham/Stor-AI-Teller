@@ -56,3 +56,7 @@ python server.py
 
 ### Gallery
 <img src="./frontend/src/assets/Screenshot 2023-01-29 154914.png">
+<img src="./frontend/src/assets/create_story_page.png">
+<img src="./frontend/src/assets/loading_page.png">
+<img src="./frontend/src/assets/page1.png">
+<img src="./frontend/src/assets/pagelast.png">
