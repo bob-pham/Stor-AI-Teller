@@ -1,5 +1,7 @@
 # Stor-AI-Teller
 
+By Lilian & Bob Pham
+
 StorAI Teller is innovative webapp that allows kids and parents to create completely unique stories using AI. 
 Its no question that kids should be reading more, it helps expand vocabulary, improves writing, builds independence and self confidence, and fuels imagination
 Not everyone has access to books: books can be expensive, and libraries are not always commonplace or well stocked. Online, books may be more accessible, but can also be behind a paywall.
