@@ -2,16 +2,13 @@
 
 By Lilian & Bob Pham
 
-StorAI Teller is innovative webapp that allows kids and parents to create completely unique stories using AI. 
-Its no question that kids should be reading more, it helps expand vocabulary, improves writing, builds independence and self confidence, and fuels imagination
-Not everyone has access to books: books can be expensive, and libraries are not always commonplace or well stocked. Online, books may be more accessible, but can also be behind a paywall.
+Introducing StorAI Teller, the cutting-edge web application that harnesses the power of Artificial Intelligence to revolutionize the way kids and parents create stories. We all know the benefits of reading for children: it enhances vocabulary, improves writing skills, fosters independence and self-confidence, and ignites imagination. Unfortunately, not everyone has equal access to books. Libraries may be scarce, and books can be expensive. Moreover, digital books are often behind paywalls.
 
+With StoryAI Teller, these problems are a thing of the past. Our web app generates unique stories at the click of a button, offering an infinite well of exciting adventures for young readers. Our innovative machine learning algorithm uses Natural Language Processing techniques to analyze user inputs, tailoring each story to their interests and preferences.
 
-StoryAI Teller solves this problem by potentially creating an infinite well of unique stories at a click of a button. Currently free, though likely AI pictures/text completion will always be dirt cheap compared to hiring professionals. 
+Best of all, our app is currently free. While AI-generated text and images will always be significantly cheaper than hiring professional writers and illustrators, we want to make sure everyone has access to our incredible platform.
 
-There are additional benefits to StorAI Teller as well, it can stimulates children’s creativity, aiding them in gaining inspiration and understanding of how stories are created and structured. Additionally, activities can be structured around StorAI Teller: Don’t like the pictures that are generated? A cool activity would be to draw your own, using the AI generated photos as a launching point.
-
-Try it Today! (Currently in Alpha)
+In short, StorAI Teller is a game-changer. We're leveraging state-of-the-art technologies such as AI, machine learning, and natural language processing to empower young readers and ignite their love of storytelling. Join us on this exciting journey today.
 
 ## Demo/Explaination Video
 
